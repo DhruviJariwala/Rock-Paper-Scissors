@@ -4,6 +4,9 @@
     </head>
     <body>
         <script>
+            let playerWin = 0;
+            let computerWin = 0;
+            let playerInput = "";
             function computerPlay(){
                 let generate = Math.floor((Math.random()*3)+1);
                 if(generate == 1){
@@ -17,33 +20,60 @@
                 }
                 return generate;
             }
+
             function playRound(playerSelection, computerSelection){
                 if(playerSelection.match(/rock/i) && computerSelection.match(/paper/i))
                 {
+                    computerWin += 1;
                     return "You Lose! Paper wraps Rock";
                 }
                 else if(playerSelection.match(/paper/i) && computerSelection.match(/scissors/i)){
+                    computerWin += 1;
                     return "You Lose! Scissors cuts Paper";
                 }
                 else if(playerSelection.match(/scissors/i) && computerSelection.match(/rock/i)){
+                    computerWin += 1;
                     return "You Lose! Rock blunts Scissors";
                 }
                 else if(computerSelection.match(/rock/i) && playerSelection.match(/paper/i)){
+                    playerWin += 1;
                     return "You Win! Paper wraps Rock";
                 }
                 else if(computerSelection.match(/paper/i) && playerSelection.match(/scissors/i)){
+                    playerWin += 1;
                     return "You Win! Scissors cuts Paper";
                 }
                 else if(computerSelection.match(/scissors/i) && playerSelection.match(/rock/i)){
+                    playerWin += 1;
                     return "You Win! Rock blunts Scissors";
                 }
-                else{
+                else if(computerSelection===playerSelection){
                     return "It's a draw!";
                 }
+                else{
+                    return "Wrong selection, type again!";
+                }
             }
-            const playerSelection = 'SCISSORS';
-            const computerSelection = computerPlay();
-            console.log(playRound(playerSelection, computerSelection));
+
+            function getInput(){
+                playerInput = prompt("Enter your selection: ");
+                return playerInput;
+            }
+            function game(){
+                for(i=0;i<5;i++){
+                    getInput();
+                    let computerInput = computerPlay();
+                    console.log(playRound(playerInput,computerInput));
+                }
+            }
+            function result(){
+                (playerWin>computerWin) ? console.log("You win! Congratulations")
+                : (computerWin>playerWin) ? console.log("Computer Won!")
+                : (computerWin==playerWin) ? console.log("It's a draw!!")
+                : console.log("Error");
+            }
+            game();
+            result();
         </script>
     </body>
 </html>
