@@ -7,6 +7,7 @@
             let playerWin = 0;
             let computerWin = 0;
             let playerInput = "";
+            let i;
             function computerPlay(){
                 let generate = Math.floor((Math.random()*3)+1);
                 if(generate == 1){
@@ -51,6 +52,7 @@
                     return "It's a draw";
                 }
                 else{
+                    i--;
                     return "OOPS!! You entered wrong word!!";
                 }
             }
