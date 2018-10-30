@@ -10,48 +10,48 @@
             function computerPlay(){
                 let generate = Math.floor((Math.random()*3)+1);
                 if(generate == 1){
-                    generate="Rock";
+                    generate="rock";
                 }
                 else if(generate == 2){
-                    generate="Paper";
+                    generate="paper";
                 }
                 else{
-                    generate="Scissors";
+                    generate="scissors";
                 }
                 return generate;
             }
 
             function playRound(playerSelection, computerSelection){
-                if(playerSelection.match(/rock/i) && computerSelection.match(/paper/i))
+                if(playerSelection=="rock" && computerSelection=="paper")
                 {
                     computerWin += 1;
                     return "You Lose! Paper wraps Rock";
                 }
-                else if(playerSelection.match(/paper/i) && computerSelection.match(/scissors/i)){
+                else if(playerSelection=="paper" && computerSelection=="scissors"){
                     computerWin += 1;
                     return "You Lose! Scissors cuts Paper";
                 }
-                else if(playerSelection.match(/scissors/i) && computerSelection.match(/rock/i)){
+                else if(playerSelection=="scissors" && computerSelection=="rock"){
                     computerWin += 1;
                     return "You Lose! Rock blunts Scissors";
                 }
-                else if(computerSelection.match(/rock/i) && playerSelection.match(/paper/i)){
+                else if(computerSelection=="rock" && playerSelection=="paper"){
                     playerWin += 1;
                     return "You Win! Paper wraps Rock";
                 }
-                else if(computerSelection.match(/paper/i) && playerSelection.match(/scissors/i)){
+                else if(computerSelection=="paper" && playerSelection=="scissors"){
                     playerWin += 1;
                     return "You Win! Scissors cuts Paper";
                 }
-                else if(computerSelection.match(/scissors/i) && playerSelection.match(/rock/i)){
+                else if(computerSelection=="scissors" && playerSelection=="rock"){
                     playerWin += 1;
                     return "You Win! Rock blunts Scissors";
                 }
-                else if(computerSelection===playerSelection){
-                    return "It's a draw!";
+                else if(computerSelection==playerSelection){
+                    return "It's a draw";
                 }
                 else{
-                    return "Wrong selection, type again!";
+                    return "OOPS!! You entered wrong word!!";
                 }
             }
 
@@ -61,6 +61,7 @@
                     console.log("Please enter your choice!!");
                     getInput();
                 }
+                playerInput = playerInput.toLowerCase();
                 return playerInput;
             }
             function game(){
