@@ -57,6 +57,10 @@
 
             function getInput(){
                 playerInput = prompt("Enter your selection: ");
+                if((playerInput.length) == 0){
+                    console.log("Please enter your choice!!");
+                    getInput();
+                }
                 return playerInput;
             }
             function game(){
