@@ -26,34 +26,35 @@
                 if(playerSelection=="rock" && computerSelection=="paper")
                 {
                     computerWin += 1;
-                    return "You Lose! Paper wraps Rock";
+                    console.log("Computer chose: Paper"+"\n"+"Your Score : "+playerWin+"\n"+"Compter's Score: "+computerWin+"\n"+"You Lose! Paper wraps Rock");
                 }
                 else if(playerSelection=="paper" && computerSelection=="scissors"){
                     computerWin += 1;
-                    return "You Lose! Scissors cuts Paper";
+                    console.log("Computer Chose: Scissors"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Lose! Scissors cuts Paper");
                 }
                 else if(playerSelection=="scissors" && computerSelection=="rock"){
                     computerWin += 1;
-                    return "You Lose! Rock blunts Scissors";
+                    console.log("Computer Chose: Rock"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Lose! Rock blunts Scissors");
                 }
                 else if(computerSelection=="rock" && playerSelection=="paper"){
                     playerWin += 1;
-                    return "You Win! Paper wraps Rock";
+                    console.log("Computer Chose: Rock"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Win! Paper wraps Rock");
                 }
                 else if(computerSelection=="paper" && playerSelection=="scissors"){
                     playerWin += 1;
-                    return "You Win! Scissors cuts Paper";
+                    console.log("Computer Chose: Paper"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Win! Scissors cuts Paper");
                 }
                 else if(computerSelection=="scissors" && playerSelection=="rock"){
                     playerWin += 1;
-                    return "You Win! Rock blunts Scissors";
+                    console.log("Computer Chose: Scissors"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Win! Rock blunts Scissors");
                 }
                 else if(computerSelection==playerSelection){
-                    return "It's a draw";
+                    i--;
+                    console.log("You both selected same!Select again.");
                 }
                 else{
                     i--;
-                    return "OOPS!! You entered wrong word!!";
+                    console.log("OOPS!! You entered wrong word!!");
                 }
             }
 
@@ -67,15 +68,16 @@
                 return playerInput;
             }
             function game(){
-                for(i=0;i<5;i++){
+                for(i=1;i<=5;i++){
+                    console.log("Round "+i+"\n"+"****************");
                     getInput();
                     let computerInput = computerPlay();
-                    console.log(playRound(playerInput,computerInput));
+                    playRound(playerInput,computerInput);
                 }
             }
             function result(){
-                (playerWin>computerWin) ? console.log("You win! Congratulations")
-                : (computerWin>playerWin) ? console.log("Computer Won!")
+                (playerWin>computerWin) ? console.log("========================"+"\n"+"You win! Congratulations"+"\n"+"========================")
+                : (computerWin>playerWin) ? console.log("========================"+"\n"+"Computer Won!"+"\n"+"========================")
                 : (computerWin==playerWin) ? console.log("It's a draw!!")
                 : console.log("Error");
             }
