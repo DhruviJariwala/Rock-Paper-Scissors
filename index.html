@@ -1,8 +1,14 @@
 <html>
     <head>
         <title></title>
+        <link href="style.css" type="CSS/TEXT" rel="stylesheet">
     </head>
     <body>
+        <div class="container">
+            <button class="rock-btn">Rock</button>
+            <button class="paper-btn">Paper</button>
+            <button class="scissors-btn">Scissors</button>
+        </div>
         <script>
             let playerWin = 0;
             let computerWin = 0;
@@ -57,7 +63,7 @@
                     console.log("OOPS!! You entered wrong word!!");
                 }
             }
-
+            
             function getInput(){
                 playerInput = prompt("Enter your selection: ");
                 if((playerInput.length) == 0){
@@ -68,12 +74,12 @@
                 return playerInput;
             }
             function game(){
-                for(i=1;i<=5;i++){
+                //for(i=1;i<=5;i++){
                     console.log("Round "+i+"\n"+"****************");
                     getInput();
                     let computerInput = computerPlay();
                     playRound(playerInput,computerInput);
-                }
+                //}
             }
             function result(){
                 (playerWin>computerWin) ? console.log("========================"+"\n"+"You win! Congratulations"+"\n"+"========================")
