@@ -9,11 +9,27 @@
             <button class="paper-btn">Paper</button>
             <button class="scissors-btn">Scissors</button>
         </div>
+        <div class="display">
+
+        </div>
         <script>
             let playerWin = 0;
             let computerWin = 0;
             let playerInput = "";
             let i;
+            let displayResult = document.querySelector(".display");
+            const SELECTROCK = document.querySelector(".rock-btn");
+            SELECTROCK.addEventListener("click", () => {  
+                playRound("rock",computerPlay());
+                });
+            const SELECTPAPER = document.querySelector(".paper-btn");
+            SELECTPAPER.addEventListener("click", () => {  
+                playRound("paper",computerPlay());
+                });
+            const SELECTSCISSORS = document.querySelector(".scissors-btn");
+            SELECTSCISSORS.addEventListener("click", () => {  
+                playRound("scissors",computerPlay());
+                });
             function computerPlay(){
                 let generate = Math.floor((Math.random()*3)+1);
                 if(generate == 1){
@@ -32,39 +48,39 @@
                 if(playerSelection=="rock" && computerSelection=="paper")
                 {
                     computerWin += 1;
-                    console.log("Computer chose: Paper"+"\n"+"Your Score : "+playerWin+"\n"+"Compter's Score: "+computerWin+"\n"+"You Lose! Paper wraps Rock");
+                    displayResult.innerHTML = "Computer chose: Paper"+"<br/>"+"Your Score : "+playerWin+"<br/>"+"Compter's Score: "+computerWin+"<br/>"+"You Lose! Paper wraps Rock";
                 }
                 else if(playerSelection=="paper" && computerSelection=="scissors"){
                     computerWin += 1;
-                    console.log("Computer Chose: Scissors"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Lose! Scissors cuts Paper");
+                    displayResult.innerHTML = "Computer Chose: Scissors"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Lose! Scissors cuts Paper";
                 }
                 else if(playerSelection=="scissors" && computerSelection=="rock"){
                     computerWin += 1;
-                    console.log("Computer Chose: Rock"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Lose! Rock blunts Scissors");
+                    displayResult.innerHTML = "Computer Chose: Rock"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Lose! Rock blunts Scissors";
                 }
                 else if(computerSelection=="rock" && playerSelection=="paper"){
                     playerWin += 1;
-                    console.log("Computer Chose: Rock"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Win! Paper wraps Rock");
+                    displayResult.innerHTML = "Computer Chose: Rock"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Win! Paper wraps Rock";
                 }
                 else if(computerSelection=="paper" && playerSelection=="scissors"){
                     playerWin += 1;
-                    console.log("Computer Chose: Paper"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Win! Scissors cuts Paper");
+                    displayResult.innerHTML = "Computer Chose: Paper"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Win! Scissors cuts Paper";
                 }
                 else if(computerSelection=="scissors" && playerSelection=="rock"){
                     playerWin += 1;
-                    console.log("Computer Chose: Scissors"+"\n"+"Your Score: "+playerWin+"\n"+"Computer's Score: "+computerWin+"\n"+"You Win! Rock blunts Scissors");
+                    displayResult.innerHTML = "Computer Chose: Scissors"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Win! Rock blunts Scissors";
                 }
                 else if(computerSelection==playerSelection){
                     i--;
-                    console.log("You both selected same!Select again.");
+                    displayResult.innerHTML = "You both selected same ! Select again.";
                 }
                 else{
                     i--;
-                    console.log("OOPS!! You entered wrong word!!");
+                    displayResult.textContent = "OOPS!! You entered wrong word!!";
                 }
             }
             
-            function getInput(){
+            /*function getInput(){
                 playerInput = prompt("Enter your selection: ");
                 if((playerInput.length) == 0){
                     console.log("Please enter your choice!!");
@@ -74,20 +90,20 @@
                 return playerInput;
             }
             function game(){
-                //for(i=1;i<=5;i++){
-                    console.log("Round "+i+"\n"+"****************");
+                for(i=1;i<=5;i++){
+                    console.log("Round "+i+"<br/>"+"****************");
                     getInput();
                     let computerInput = computerPlay();
                     playRound(playerInput,computerInput);
-                //}
-            }
+                }
+            }*/
             function result(){
-                (playerWin>computerWin) ? console.log("========================"+"\n"+"You win! Congratulations"+"\n"+"========================")
-                : (computerWin>playerWin) ? console.log("========================"+"\n"+"Computer Won!"+"\n"+"========================")
+                (playerWin>computerWin) ? console.log("========================"+"<br/>"+"You win! Congratulations"+"<br/>"+"========================")
+                : (computerWin>playerWin) ? console.log("========================"+"<br/>"+"Computer Won!"+"<br/>"+"========================")
                 : (computerWin==playerWin) ? console.log("It's a draw!!")
                 : console.log("Error");
             }
-            game();
+            //game();
             result();
         </script>
     </body>
