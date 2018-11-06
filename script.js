@@ -6,14 +6,24 @@ const SELECTROCK = document.querySelector(".rock-btn");
 const SELECTPAPER = document.querySelector(".paper-btn");
 const SELECTSCISSORS = document.querySelector(".scissors-btn");
 SELECTROCK.addEventListener("click", () => {
+    SELECTROCK.classList.add("button-select");
     playRound("rock",computerPlay());
     });
 SELECTPAPER.addEventListener("click", () => {
+    SELECTPAPER.classList.add("button-select");
     playRound("paper",computerPlay());
     });
 SELECTSCISSORS.addEventListener("click", () => {
+    SELECTSCISSORS.classList.add("button-select");
     playRound("scissors",computerPlay());
     });
+    function removeeffect(e){
+        e.target.classList.remove("button-select");
+        console.log(e.target.classList);
+    }
+SELECTROCK.addEventListener("animationend",removeeffect);
+SELECTPAPER.addEventListener("animationend",removeeffect);
+SELECTSCISSORS.addEventListener("animationend",removeeffect);
 function computerPlay(){
     let generate = Math.floor((Math.random()*3)+1);
     if(generate == 1){
