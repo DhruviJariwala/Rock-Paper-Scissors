@@ -60,6 +60,7 @@ button:hover{
     margin: 0 auto;
     width: 250px;
     padding: 50px;
+    padding-bottom: 0px;
     text-align: center;
     font-weight: 200;
 }
@@ -74,4 +75,13 @@ button:hover{
     height: 300px;
     width: 200px;
     margin: 15px;
+}
+
+.play-again{
+    display: none;
+    padding: 5px;
+    text-decoration: underline;
+    color: teal;
+    margin: 0 auto;
+    background-color: rgba(183, 250, 250, 0.452);
 }

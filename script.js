@@ -5,6 +5,10 @@ let displayResult = document.querySelector(".display");
 const SELECTROCK = document.querySelector(".rock-btn");
 const SELECTPAPER = document.querySelector(".paper-btn");
 const SELECTSCISSORS = document.querySelector(".scissors-btn");
+const PLAYAGAIN = document.querySelector(".play-again");
+
+PLAYAGAIN.addEventListener("click", () => {location.reload();});
+
 SELECTROCK.addEventListener("click", () => {
     SELECTROCK.classList.add("button-select");
     playRound("rock",computerPlay());
@@ -19,7 +23,6 @@ SELECTSCISSORS.addEventListener("click", () => {
     });
     function removeeffect(e){
         e.target.classList.remove("button-select");
-        console.log(e.target.classList);
     }
 SELECTROCK.addEventListener("animationend",removeeffect);
 SELECTPAPER.addEventListener("animationend",removeeffect);
@@ -86,16 +89,16 @@ function result(){
     if(playerWin == 5){
         displayResult.innerHTML += "<br/>========================"+"<br/>"+"You win! Congratulations"+"<br/>"+"========================<br/>";
         disableButtons();
-        displayResult.innerHTML += "<button>Play Again?</button>";
+        PLAYAGAIN.style.display = "block";
     }
     else if(computerWin == 5){
         displayResult.innerHTML += "<br/>========================"+"<br/>"+"Computer Won!"+"<br/>"+"========================<br/>";
         disableButtons();
-        displayResult.innerHTML += "<button>Play Again?</button>";
+        PLAYAGAIN.style.display = "block";
     }
     else if((computerWin && playerWin) == 5){
         displayResult.innerHTML = "It's a draw!!";
-        displayResult.innerHTML += "<button>Play Again?</button>";
+        PLAYAGAIN.style.display = "block";
     }
     else {
         return;
