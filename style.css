@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #e6fffa;
+}
+
+button{
+    border: none;
+    background-color: #e6fffa;
+    cursor: pointer;
+}
+
+.display{
+    margin: 0 auto;
+    width: 250px;
+    padding: 50px;
+}
+
+.container{
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 750px;
+}
+
+.container img{
+    height: 300px;
+    width: 200px;
+    margin: 15px;
+}
