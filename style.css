@@ -101,13 +101,65 @@ button:hover{
     width: 190px;
 }
 
-.play-again{
-    display: none;
-    padding: 5px;
-    text-decoration: underline;
-    color: teal;
-    margin: 0 auto;
-    border-radius: 5px;
-    box-shadow: 0 12px 16px rgba(0,0,0,0.09);
+.close-button{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 10px;
+    padding-top: 5px;
+    margin: 5px;
+    color: rgb(61, 35, 36);
+    border: 1px solid rgba(187, 119, 120, 0.219);
+    border-radius: 50%;
+    background-color: #ffffff70;
 }
 
+.close-button:hover,
+.close-button:active{
+    cursor: pointer;
+    color:#481620;
+    background-color: #00000033;
+    transition: 0.5s ease-in-out;
+}
+
+.box{
+    background-color: #886176e8;
+    width: 500px;
+    height: 150px;
+    border: 1px solid rgba(193, 110, 111, 0.199);
+    border-radius: 15px;
+    position: relative;
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 30%;
+    top: 0;
+}
+
+.dialog-box{
+    position: absolute;
+    top: 55px;
+    left: 120px;
+}
+
+.play-again{
+    display: block;
+    padding: 10px;
+    text-decoration: underline;
+    color: rgb(61, 35, 36);
+    background-color: #ffffff3b;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 12px 16px rgba(0,0,0,0.09);
+    position: absolute;
+    top: 92px;
+    left: 185px;
+}
+
+.play-again:hover,
+.play-again:active{
+    cursor: pointer;
+    color: #481620;
+    background-color: #00000033;
+    transition: 0.5s ease-in-out;
+}

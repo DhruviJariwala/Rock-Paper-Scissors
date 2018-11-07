@@ -8,8 +8,19 @@ const SELECTSCISSORS = document.querySelector(".scissors-btn");
 const PLAYAGAIN = document.querySelector(".play-again");
 const PLAYERSCORE = document.querySelector(".your-score");
 const COMPUTERSCORE = document.querySelector(".computer-score");
+const DIALOGBOX = document.querySelector(".dialog-box");
+const CLOSEBUTTON = document.querySelector(".close-button");
+const BOX = document.querySelector(".box");
+const HEADER = document.querySelector(".header");
 
 PLAYAGAIN.addEventListener("click", () => {location.reload();});
+CLOSEBUTTON.addEventListener("click", () => {BOX.style.display = "none"});
+
+window.onclick = function(e){
+    if(e.target == BOX){
+        BOX.style.display = "none";
+    }
+}
 
 SELECTROCK.addEventListener("click", () => {
     SELECTROCK.classList.add("button-select");
@@ -101,18 +112,21 @@ function disableButtons(){
 }
 function result(){
     if(playerWin == 5){
-        displayResult.innerHTML += "<br/>========================"+"<br/>"+"You win! Congratulations"+"<br/>"+"========================<br/>";
+        DIALOGBOX.innerHTML += "You win! Congratulations";
         disableButtons();
-        PLAYAGAIN.style.display = "block";
+        BOX.style.display = "block";
+        HEADER.style.visibility = "hidden";
     }
     else if(computerWin == 5){
-        displayResult.innerHTML += "<br/>========================"+"<br/>"+"Computer Won!"+"<br/>"+"========================<br/>";
+        DIALOGBOX.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Computer Won!";
         disableButtons();
-        PLAYAGAIN.style.display = "block";
+        BOX.style.display = "block";
+        HEADER.style.visibility = "hidden";
     }
     else if((computerWin && playerWin) == 5){
-        displayResult.innerHTML = "It's a draw!!";
-        PLAYAGAIN.style.display = "block";
+        DIALOGBOX.innerHTML= "It's a draw!!";
+        BOX.style.display = "block";
+        HEADER.style.visibility = "hidden";
     }
     else {
         return;
