@@ -122,6 +122,11 @@ button:hover{
     transition: 0.5s ease-in-out;
 }
 
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
 .box{
     background-color: #886176e8;
     width: 500px;
@@ -134,6 +139,8 @@ button:hover{
     z-index: 1; /* Sit on top */
     left: 30%;
     top: 0;
+    animation-name: animatetop;
+    animation-duration: 0.4s
 }
 
 .dialog-box{
