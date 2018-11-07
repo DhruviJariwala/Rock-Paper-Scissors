@@ -4,6 +4,9 @@
     font-size: 17px;
     font-family: 'Lato', sans-serif;
     color: #181D27;
+    word-spacing: 2px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
 }
 
 @keyframes shake {
@@ -63,7 +66,7 @@ button:hover{
     padding: 50px;
     padding-bottom: 0px;
     text-align: center;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .container{
@@ -94,8 +97,8 @@ button:hover{
 .l-score,
 .r-score{
     padding: 15px;;
-    color: #181D27;
-    width: 170px;
+    color: #151E3F;
+    width: 190px;
 }
 
 .play-again{
