@@ -3,6 +3,7 @@
     padding: 0px;
     font-size: 17px;
     font-family: 'Lato', sans-serif;
+    color: #181D27;
 }
 
 @keyframes shake {
@@ -62,19 +63,39 @@ button:hover{
     padding: 50px;
     padding-bottom: 0px;
     text-align: center;
-    font-weight: 200;
+    font-weight: 500;
 }
 
 .container{
     padding-top: 50px;
     margin: 0 auto;
     width: 750px;
+    position: relative;
 }
 
 .container img{
     height: 300px;
     width: 200px;
     margin: 15px;
+}
+
+.l-score{
+    position: absolute;
+    bottom: -55px;
+    left: 60px;
+}
+
+.r-score{
+    position: absolute;
+    bottom: -55px;
+    right: 55px;
+}
+
+.l-score,
+.r-score{
+    padding: 15px;;
+    color: #181D27;
+    width: 170px;
 }
 
 .play-again{
@@ -87,25 +108,3 @@ button:hover{
     box-shadow: 0 12px 16px rgba(0,0,0,0.09);
 }
 
-.outer-box{
-    display: none;
-    background-color: red;
-    position: fixed;
-    top: 0;
-    width: 1500px;
-    height: 100px;
-}
-
-.inner-box{
-    margin: 15px auto;
-    border: 1px solid blue;
-    padding: 20px;
-    width: 150px;
-}
-
-.close-button:hover,
-.close-button:focus{
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}

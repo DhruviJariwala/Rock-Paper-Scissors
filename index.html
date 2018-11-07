@@ -5,9 +5,6 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
     </head>
     <body>
-            <div class="open-button">
-                    <button>Open</button>
-                </div>
         <div class="header">
             <div>Choose your Weapon:</div>
         </div>
@@ -15,18 +12,36 @@
             <button class="rock-btn"><img src="images/rock.png" alt="rock image"></button>
             <button class="paper-btn"><img src="images/paper.png" alt="paper image"></button>
             <button class="scissors-btn"><img src="images/scissors.png" alt="scissors image"></button>
+            <div class="main-display">
+                <div class="left-inner-display">
+                    <div class="l-score">
+                        Your Score: <span class="your-score"></span>
+                    </div>
+                    <div class="l-result">
+    
+                    </div>
+                    <div class="l-description">
+    
+                    </div>
+                </div>
+                <div class="right-inner-display">
+                    <div class="r-score">
+                        Computer's Score: <span class="computer-score"></span>
+                    </div>
+                    <div class="r-result">
+    
+                    </div>
+                    <div class="r-description">
+    
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="display"></div>
         <div class="play-again-div">
             <button class="play-again">
                 Play Again?
             </button>
-        </div>
-        <div class="outer-box">
-            <div class="inner-box">
-                <span class="close-button"><button>X</button></span>
-                <p>Play again?</p>
-            </div>
         </div>
         <script src="script.js"></script>
     </body>

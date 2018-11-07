@@ -6,6 +6,8 @@ const SELECTROCK = document.querySelector(".rock-btn");
 const SELECTPAPER = document.querySelector(".paper-btn");
 const SELECTSCISSORS = document.querySelector(".scissors-btn");
 const PLAYAGAIN = document.querySelector(".play-again");
+const PLAYERSCORE = document.querySelector(".your-score");
+const COMPUTERSCORE = document.querySelector(".computer-score");
 
 PLAYAGAIN.addEventListener("click", () => {location.reload();});
 
@@ -45,32 +47,44 @@ function playRound(playerSelection, computerSelection){
     if(playerSelection=="rock" && computerSelection=="paper")
     {
         computerWin += 1;
-        displayResult.innerHTML = "Computer chose: Paper"+"<br/>"+"Your Score : "+playerWin+"<br/>"+"Compter's Score: "+computerWin+"<br/>"+"You Lose! Paper wraps Rock<br/>";
+        COMPUTERSCORE.textContent = computerWin;
+        PLAYERSCORE.textContent = playerWin;
+        displayResult.innerHTML = "Computer chose: Paper"+"<br/>"+"You Lose! Paper wraps Rock<br/>";
         result();
     }
     else if(playerSelection=="paper" && computerSelection=="scissors"){
         computerWin += 1;
-        displayResult.innerHTML = "Computer Chose: Scissors"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Lose! Scissors cuts Paper<br/>";
+        COMPUTERSCORE.textContent = computerWin;
+        PLAYERSCORE.textContent = playerWin;
+        displayResult.innerHTML = "Computer Chose: Scissors"+"<br/>"+"You Lose! Scissors cuts Paper<br/>";
         result();
     }
     else if(playerSelection=="scissors" && computerSelection=="rock"){
         computerWin += 1;
-        displayResult.innerHTML = "Computer Chose: Rock"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Lose! Rock blunts Scissors<br/>";
+        COMPUTERSCORE.textContent = computerWin;
+        PLAYERSCORE.textContent = playerWin;
+        displayResult.innerHTML = "Computer Chose: Rock"+"<br/>"+"You Lose! Rock blunts Scissors<br/>";
         result();
     }
     else if(computerSelection=="rock" && playerSelection=="paper"){
         playerWin += 1;
-        displayResult.innerHTML = "Computer Chose: Rock"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Win! Paper wraps Rock<br/>";
+        COMPUTERSCORE.textContent = computerWin;
+        PLAYERSCORE.textContent = playerWin;
+        displayResult.innerHTML = "Computer Chose: Rock"+"<br/>"+"You Win! Paper wraps Rock<br/>";
         result();
     }
     else if(computerSelection=="paper" && playerSelection=="scissors"){
         playerWin += 1;
-        displayResult.innerHTML = "Computer Chose: Paper"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Win! Scissors cuts Paper<br/>";
+        COMPUTERSCORE.textContent = computerWin;
+        PLAYERSCORE.textContent = playerWin;
+        displayResult.innerHTML = "Computer Chose: Paper"+"<br/>"+"You Win! Scissors cuts Paper<br/>";
         result();
     }
     else if(computerSelection=="scissors" && playerSelection=="rock"){
         playerWin += 1;
-        displayResult.innerHTML = "Computer Chose: Scissors"+"<br/>"+"Your Score: "+playerWin+"<br/>"+"Computer's Score: "+computerWin+"<br/>"+"You Win! Rock blunts Scissors<br/>";
+        COMPUTERSCORE.textContent = computerWin;
+        PLAYERSCORE.textContent = playerWin;
+        displayResult.innerHTML = "Computer Chose: Scissors"+"<br/>"+"You Win! Rock blunts Scissors<br/>";
         result();
     }
     else if(computerSelection==playerSelection){
@@ -103,14 +117,4 @@ function result(){
     else {
         return;
     }
-}
-
-const BOX = document.querySelector(".outer-box");
-const BUTTON = document.querySelector(".open-button");
-const CLOSEBUTTON = document.querySelector(".close-button");
-BUTTON.onclick = function(){
-    BOX.style.display = "block";
-}
-CLOSEBUTTON.onclick = function(){
-    BOX.style.display = "none";
 }
