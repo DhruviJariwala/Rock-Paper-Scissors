@@ -104,3 +104,13 @@ function result(){
         return;
     }
 }
+
+const BOX = document.querySelector(".outer-box");
+const BUTTON = document.querySelector(".open-button");
+const CLOSEBUTTON = document.querySelector(".close-button");
+BUTTON.onclick = function(){
+    BOX.style.display = "block";
+}
+CLOSEBUTTON.onclick = function(){
+    BOX.style.display = "none";
+}
