@@ -137,7 +137,7 @@ button:hover{
     display: none;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    left: 30%;
+    left: 34%;
     top: 0;
     animation-name: animatetop;
     animation-duration: 0.4s
